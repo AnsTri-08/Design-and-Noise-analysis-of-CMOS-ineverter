@@ -10,7 +10,8 @@ The whole process starts with analysis of NMOS and PMOS devices, specifically th
 ![](IMAGES/NMOS.png)
 
 I used the above to plot the basic characteristic plots for an NMOS Transistor, That is Ids vs Vds and Ids vs Vgs.
-!(IMAGES/Id_v_Vds.png)
+![](IMAGES/Id_v_Vds.png)
+![](IMAGES/Id_v_Vgs.png)
 
 I also did plot gm and ro values for the above mosfet. Both of these below are for the general dc sweep we did above.
 ![](IMAGES/gm.png)
