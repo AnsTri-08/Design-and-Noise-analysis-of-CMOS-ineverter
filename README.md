@@ -13,35 +13,35 @@ I used the above to plot the basic characteristic plots for an NMOS Transistor, 
 !(IMAGES/Id_v_Vds.png)
 
 I also did plot gm and ro values for the above mosfet. Both of these below are for the general dc sweep we did above.
-!(IMAGES/gm.png)
-!(IMAGES/Ro_inv.png)
+![](IMAGES/gm.png)
+![](IMAGES/Ro_inv.png)
 
 Since I am making an inverter, I choose the highest value avialable for the Vds, that is 1.8V. So to do that, we just change the value of Vds source to 1.8 and then hit netlist, then simulate to simulate the circuit.
 
 This following plot also tells us the value of current at this value of Vgs which is around 500uA. Next step is to calculate the Gm, that is the transconductance parameter. To do that I used the commands as shown in the console in the left hand side. The deriv() function takes the derivative with respect to the independent variable present at the current simulation. From the definition of Gm we are aware that it is dIds/dVgs. Hence, I did the same to plot the Gm of this nfet. After this I measured the value at 1.8V.
 
-!(IMAGES/gm_for_1.8V.png)
+![](IMAGES/gm_for_1.8V.png)
 
 Similaraly I did the same for Ids vs Vds and also used that to find rds.
 
-!(IMAGES/Ro_for_1.8V.png)
+![](IMAGES/Ro_for_1.8V.png)
 
 Hence, we now have all our important values we needed. Same can be done for a PMOS. Motive is same, but especially to extract the value of Aspect ratio for which the current is the same in both NMOS and PMOS. I have done some experimentation and found that at W/L of PMOS = 2.5 * (Aspect ratio of NMOS), the current value is pretty close.
 
-!(IMAGES/PMOS.png)
-!(IMAGES/PMOS_graph.png)
+![](IMAGES/PMOS.png)
+![](IMAGES/PMOS_graph.png)
 
 ->Strong 0 and Weak 1
 
-!(IMAGES/NMOSs0w1.png)
-!(IMAGES/s0w1.png)
+![](IMAGES/NMOSs0w1.png)
+![](IMAGES/s0w1.png)
 
 You can see that, when a square wave is applied to the input of NMOS, when it is LOW(0V), the output goes to HIGH(1.8V). But when the input is HIGH(1.8V), the output goes to a value that is much larger than 0V. This is due to the fact that when Vgs is 1.8V, the NMOS is in linear region. This is where the MOSFET acts as a voltage controlled resistor. At this point, the output is connected to a Voltage Divider Configuration. That is the output takes the value which is defined by the voltage across the resistance of the mosfet. Hence, NMOS is able to transmit STRONG 0, but not a STRONG 1. So NMOS is Strong 0 but a Weak 1
 
 Weak 0 and Strong 1
 
-!(IMAGES/PMOSs1w0.png)
-!(IMAGES/s1w0.png)
+![](IMAGES/PMOSs1w0.png)
+![](IMAGES/s1w0.png)
 
 The reasoning is the same as the previous section
 
@@ -53,13 +53,13 @@ Before, I start with the CMOS inverter, I believe it is worth mentioning what an
 
 So I designed a Schematic of the Inverter, where the whole thing is based on what we determined earlier. I have chosen (W/L) of PMOS = 2.5 times (W/L) of NMOS and (W/L) of NMOS is 1/0.15 in microns. I also designed a symbol of it, so that we can utilise that for further schematic creation.
 
-!(IMAGES/CMOS_sch.png)
-!(IMAGES/CMOS_sym.png)
-!(IMAGES/CMOS_test.png)
+![](IMAGES/CMOS_sch.png)
+![](IMAGES/CMOS_sym.png)
+![](IMAGES/CMOS_test.png)
 
  ->DC Analysis and Important design parameters
 
- !(IMAGES/CMOS_dc_anal.png)
+ ![](IMAGES/CMOS_dc_anal.png)
 
  DC analysis would be used to plot a Voltage Transfer Characteristics (VTC) curve for the circuit. It will sweep the value of Vin from high to low to determine the working of circuit with respect to different voltage levels in the input. The following plot is observed when simulated :
 
@@ -78,7 +78,7 @@ Ans since Vth comes out to be 0.882V, we are pretty close to what we want.
 
 VOH and VOL are easy to determine as they are your aboslute values. In our case it is 1.8V and 0V respectively. For Vih and Vil, we have another method. At Vin = VIH, NMOS is in Saturation region and PMOS in Linear; while when Vin = VIL, NMOS is in Linear and PMOS in Saturation. Another interesting thing about these points is that, these are the points on the curve, when the magnitude of slope = 1. So we can use measure commands to find them on the plot. In the plot shown below, look at the points that are at the intersection of the vout curve and the blue vertical line. These are our VIH and VIL.
 
- !(IMAGES/noise_cal.png)
+ ![](IMAGES/noise_cal.png)
 
 Let's summarize the values obtained :
 Voltage 	 Value
