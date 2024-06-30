@@ -8,6 +8,7 @@ The whole process starts with analysis of NMOS and PMOS devices, specifically th
 ->General MOS Analysis
 
 !(IMAGES/NMOS.png)
+
 I used the above to plot the basic characteristic plots for an NMOS Transistor, That is Ids vs Vds and Ids vs Vgs.
 
 
