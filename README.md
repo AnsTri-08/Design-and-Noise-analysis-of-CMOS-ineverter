@@ -81,13 +81,13 @@ VOH and VOL are easy to determine as they are your aboslute values. In our case 
 
  ![](IMAGES/noise_cal.png)
 
-Let's summarize the values obtained :
-Voltage 	 Value
-Vth_inv 	 0.88V
-VOH 	     1.8V
-VOL 	     0V
-VIH 	     1.00V
-VIL 	     0.75V
+Let's summarize the values obtained :Voltage 	 Value
+                                     Vth_inv 	 0.88V
+                                     VOH 	     1.8V
+                                     VOL 	     0V
+                                     VIH 	     1.00V
+                                     VIL 	     0.75V
+
 
 Noise margins are defined as the range of values for which the device can work noise free or with high resistance to noise. This is an important parameter for digital circuits, since they work with a set of specific values(2 for binary systems), so it becomes crucial to know what values of the voltages can it sustain for each value. This range is also referred to as Noise Immunity. There are two such values of Noise margins for a binary system:
 NML(Noise Margin for Low) = VIL - VOL
