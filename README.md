@@ -1,11 +1,11 @@
 # Design-and-analysis-of-CMOS-ineverter
-=>Design analysis of CMOS ineverter
+## =>Design analysis of CMOS ineverter
 
 This project has motive of experimenting with working of an inverter and understanding the parameters involved with it. The design will utilise the models that are present under the skywater 130nm pdk and various open source tools such as, Xschem, NGSPICE, etc.
 
 The whole process starts with analysis of NMOS and PMOS devices, specifically the 1.8v standard models available inside the pdk to determine a common working W/L ratio and also the gm, ron and similar values. After this we start with the design of a CMOS inverter that includes schematic and measurement of noise margin parameters.
 
-->General MOS Analysis
+## ->General MOS Analysis
 
 ![](IMAGES/NMOS.png)
 
@@ -32,14 +32,14 @@ Hence, we now have all our important values we needed. Same can be done for a PM
 ![](IMAGES/PMOS.png)
 ![](IMAGES/PMOS_graph.png)
 
-->Strong 0 and Weak 1
+## ->Strong 0 and Weak 1
 
 ![](IMAGES/NMOSs0w1.png)
 ![](IMAGES/s0w1.png)
 
 You can see that, when a square wave is applied to the input of NMOS, when it is LOW(0V), the output goes to HIGH(1.8V). But when the input is HIGH(1.8V), the output goes to a value that is much larger than 0V. This is due to the fact that when Vgs is 1.8V, the NMOS is in linear region. This is where the MOSFET acts as a voltage controlled resistor. At this point, the output is connected to a Voltage Divider Configuration. That is the output takes the value which is defined by the voltage across the resistance of the mosfet. Hence, NMOS is able to transmit STRONG 0, but not a STRONG 1. So NMOS is Strong 0 but a Weak 1
 
-Weak 0 and Strong 1
+## ->Weak 0 and Strong 1
 
 ![](IMAGES/PMOSs1w0.png)
 ![](IMAGES/s1w0.png)
@@ -48,7 +48,7 @@ The reasoning is the same as the previous section
 
 Hence, neither NMOS nor PMOS would make a great inverter on their own. Thus we use configuration known as CMOS.
 
-=>CMOS Inverter Analysis
+## =>CMOS Inverter Analysis
 
 Before, I start with the CMOS inverter, I believe it is worth mentioning what an Inverter is. Inverter is something that inverts. In electronics it is very popularly explained as something that performs the NOT logic, that is complements the input. So a HIGH(1.8V) becomes LOW(0V) and vice versa. Ideally, the output follows the input and there is no delay or propogation issues of the circuit. 
 
@@ -58,7 +58,7 @@ So I designed a Schematic of the Inverter, where the whole thing is based on wha
 ![](IMAGES/CMOS_sym.png)
 ![](IMAGES/CMOS_test.png)
 
- ->DC Analysis and Important design parameters
+ ## ->DC Analysis and Important design parameters
 
  ![](IMAGES/CMOS_dc_anal.png)
 
@@ -81,12 +81,13 @@ VOH and VOL are easy to determine as they are your aboslute values. In our case 
 
  ![](IMAGES/noise_cal.png)
 
-Let's summarize the values obtained :Voltage 	 Value
-1                                    Vth_inv 	 0.88V
-2                                    VOH 	     1.8V
-3                                    VOL 	     0V
-4                                    VIH 	     1.00V
-5                                    VIL 	     0.75V
+| Voltage | Value   |
+|---------|---------|
+| Vth_inv | 0.88V   |
+| VOH     | 1.8V    |
+| VOL     | 0V      |
+| VIH     | 1.00V   |
+| VIL     | 0.75V   |
 
 
 Noise margins are defined as the range of values for which the device can work noise free or with high resistance to noise. This is an important parameter for digital circuits, since they work with a set of specific values(2 for binary systems), so it becomes crucial to know what values of the voltages can it sustain for each value. This range is also referred to as Noise Immunity. There are two such values of Noise margins for a binary system:
