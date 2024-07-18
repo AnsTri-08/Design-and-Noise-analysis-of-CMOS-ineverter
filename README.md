@@ -103,3 +103,24 @@ Now, they aren't equal. But if we were to take some more effort to get the value
  ## ->Transient Analysis and Important design parameters
 
  ### =>Delay analysis
+
+ ![](IMAGES/unloaded_delay.png)
+ 
+ ![](IMAGES/propogation_delay.png)
+
+ ![](IMAGES/rise_and_fall_time.png)
+
+ ![](IMAGES/loaded_delay_fast_clock.png)
+
+ ![](IMAGES/loaded_delay.png)
+
+ ![](IMAGES/updated_delay.png)
+
+ ![](IMAGES/bigger_CMOS_delay.png)
+
+  ### =>Power analysis
+
+  ![](IMAGES/avg_power_highC.png)
+
+  ![](IMAGES/CMOS_lowC.png)
+  ![](IMAGES/avg_power_lowC.png) 
