@@ -99,3 +99,7 @@ NMH(Noise Margin for HIGH) = VOH - VIH
 So for our calculated values, the device would have, NML = 0.75V and NML = 0.80V.
 
 Now, they aren't equal. But if we were to take some more effort to get the values of Vth closet to Vdd/2 (0.9V), then we can get NML = NMH. But for our case they are close enough.
+
+ ## ->Transient Analysis and Important design parameters
+
+ ### =>Delay analysis
