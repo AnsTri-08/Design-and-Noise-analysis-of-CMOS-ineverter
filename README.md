@@ -66,7 +66,7 @@ So I designed a Schematic of the Inverter, where the whole thing is based on wha
 
  A voltage transfer characteristics paints a plot that shows the behavior of a device when it's input is changed(full swing). It shows what happens to the output as input changes. In our case, for an inverter we can see a plot that is like a square wave(non ideal), that changes it's nature around 0.88 volts of input. So one can say that there are like 3 regions in the VTC curve, the portion where output is high, the place of transistion and the one where the output goes low. But actually there are five regions of operation and they are based on the working of inverter constituents, that is the NMOS and the PMOS transistors with respect to the change in the input potential.
 
- ###=>Noise analysis
+ ### =>Noise analysis
 
  Now it is time to talk about the important parameters of this device that are based off it's VTC curve.
 
