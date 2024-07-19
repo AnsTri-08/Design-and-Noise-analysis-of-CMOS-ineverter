@@ -154,5 +154,12 @@ Transient analysis in circuit design involves studying how a circuit responds to
   ![](IMAGES/avg_power_highC.png)
   We can see a high power is dissipated of 81uW from a single inverter.
 
+  Power dissipation in a CMOS can be reduced by-
+  i>reducung supply voltage
+  ii>reducing load capacitance
+  iii>reducing switching activity
+  
   ![](IMAGES/CMOS_lowC.png)
+  I reduced the load capacitance because we need the high supply voltage for high performance.
   ![](IMAGES/avg_power_lowC.png) 
+  We can see that by reducing load capacitance the average power consumed has reduced to 16.7uW. 
