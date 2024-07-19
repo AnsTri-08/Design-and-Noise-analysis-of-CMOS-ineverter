@@ -103,6 +103,8 @@ Now, they aren't equal. But if we were to take some more effort to get the value
  ## ->Transient Analysis and Important design parameters
 
  ### =>Delay analysis
+ 
+Transient analysis in circuit design involves studying how a circuit responds to changes in input signals over time. For a CMOS inverter, transient analysis examines the dynamic behavior during the switching process, such as when the input voltage transitions from low to high or high to low. This analysis is crucial for understanding the timing characteristics, propagation delay, rise and fall times, and overall performance of the inverter in real-world applications.
 
  ![](IMAGES/unloaded_delay.png)
  
