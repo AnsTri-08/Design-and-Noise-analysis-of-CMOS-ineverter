@@ -150,8 +150,9 @@ Transient analysis in circuit design involves studying how a circuit responds to
  We can see the rise and fall time has reduced.
  
   ### =>Power analysis
-
+  Next i calculated the average power dissipated by integrating the drain current with respect to time. 
   ![](IMAGES/avg_power_highC.png)
+  We can see a high power is dissipated of 81uW from a single inverter.
 
   ![](IMAGES/CMOS_lowC.png)
   ![](IMAGES/avg_power_lowC.png) 
