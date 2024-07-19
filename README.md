@@ -163,3 +163,7 @@ Transient analysis in circuit design involves studying how a circuit responds to
   I reduced the load capacitance because we need the high supply voltage for high performance.
   ![](IMAGES/avg_power_lowC.png) 
   We can see that by reducing load capacitance the average power consumed has reduced to 16.7uW. 
+
+  ## =>Summary
+
+  This project explored the design and analysis of a CMOS inverter using the Skywater 130nm PDK and tools like Xschem and Ngspice. Detailed NMOS and PMOS simulations helped in defining design parameters. The CMOS inverter's performance was evaluated through DC and transient analysis, focusing on noise margins, propagation delay, and rise and fall times. Additionally, power analysis was conducted, showing that reducing supply voltage, load capacitance, and switching activity can significantly reduce power dissipation. The results demonstrate the importance of balancing design trade-offs to optimize inverter performance.
