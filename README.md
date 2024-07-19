@@ -104,22 +104,51 @@ Now, they aren't equal. But if we were to take some more effort to get the value
 
  ### =>Delay analysis
  
-Transient analysis in circuit design involves studying how a circuit responds to changes in input signals over time. For a CMOS inverter, transient analysis examines the dynamic behavior during the switching process, such as when the input voltage transitions from low to high or high to low. This analysis is crucial for understanding the timing characteristics, propagation delay, rise and fall times, and overall performance of the inverter in real-world applications.
+Transient analysis in circuit design involves studying how a circuit responds to changes in input signals over time. For a CMOS inverter, transient analysis examines the dynamic behavior during the switching process, such as when the input voltage transitions from low to high or high to low.In this project, a pulse signal is used as the input to the inverter to simulate rapid transitions and observe the circuit's response. This analysis is crucial for understanding the timing characteristics, propagation delay, rise and fall times, and overall performance of the inverter in real-world applications.
 
  ![](IMAGES/unloaded_delay.png)
+
+ I used the above pulse input(high-1.8V,low-0V,rise time and fall time-0.5ns,pulse width-4.5ns,total period-10ns).
+ For unloaded delay analysis i disconnected the external capacitor.
  
  ![](IMAGES/propogation_delay.png)
 
+ We observe the minor discerepencies we observe in the graph of Vin and Vout because of the internal capacitance of the CMOS.
+ Next i calculated the high to low and low to high propogation delay taking 50% of the HIGH as the threshold value.
+ I averaged it out to get propogation delay as 34.64ps.
+
  ![](IMAGES/rise_and_fall_time.png)
+
+ Next i calculated the rise time and fall time from 10% to 90% of HIGH value.
+ I obtained the following results
+ 
+| Rise Time | 69.9ps |
+| Fall Time | 54.8ps |
 
  ![](IMAGES/loaded_delay_fast_clock.png)
 
+ Next i connected the capacitor to observe the loaded delay.
+ As we can observe the graph is distorted and far from ideal because we used a fast clock for the given capacitance.This results in not enough time for capacitor to charge and discharge.
+
  ![](IMAGES/loaded_delay.png)
 
+ Thus i reduced clock frequency.(high-1.8V,low-0V,rise time and fall time-1ns,pulse width-9ns,total period-20ns)
+ I also reduced the external capacitance.
+
  ![](IMAGES/updated_delay.png)
+ we get the following delay after making the changes. Now the capacitor gets charged and discharged completely.
 
+ we can further reduce the CMOS rise and fall time by-
+ i>reducing load capacitance and internal capacitance
+ ii>increasing power
+ iii>increasing size on the inverter
+
+ Since i am already using the maximum power(1.8), we can only increase the size of the inverter.Although there are some limitations to it as increasing size of inverter also increases the internal capacitance.
+ 
  ![](IMAGES/bigger_CMOS_delay.png)
-
+ This was obtained after increasing the aspect ratio of the NMOS and PMOS by 4 times.
+ We can see the rise and fall time has reduced.
+ 
   ### =>Power analysis
 
   ![](IMAGES/avg_power_highC.png)
